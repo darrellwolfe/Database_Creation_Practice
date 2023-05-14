@@ -1,0 +1,28 @@
+﻿CREATE TABLE [dbo].[Employee] (
+    [EmployeeId]      INT             IDENTITY (1, 1) NOT NULL,
+    [FirstName]       VARCHAR (255)   NOT NULL,
+    [MiddleName]      VARCHAR (255)   NULL,
+    [LastName]        VARCHAR (255)   NOT NULL,
+    [AdditionalNames] VARCHAR (255)   NULL,
+    [Aliases]         VARCHAR (255)   NULL,
+    [DateOfBirth]     DATE            NULL,
+    [Gender]          CHAR (1)        NULL,
+    [Email]           VARCHAR (255)   NULL,
+    [PhoneNumber]     VARCHAR (255)   NULL,
+    [Address]         VARCHAR (255)   NULL,
+    [City]            VARCHAR (255)   NULL,
+    [State]           VARCHAR (255)   NULL,
+    [Country]         VARCHAR (255)   NULL,
+    [PostalCode]      VARCHAR (255)   NULL,
+    [HireDate]        DATE            NULL,
+    [TerminationDate] DATE            NULL,
+    [JobTitle]        VARCHAR (255)   NULL,
+    [DepartmentId]    INT             NULL,
+    [ManagerId]       INT             NULL,
+    [Salary]          DECIMAL (19, 4) NULL,
+    [IsActive]        BIT             NULL,
+    PRIMARY KEY CLUSTERED ([EmployeeId] ASC),
+    FOREIGN KEY ([DepartmentId]) REFERENCES [dbo].[Department] ([DepartmentId]),
+    FOREIGN KEY ([ManagerId]) REFERENCES [dbo].[Employee] ([EmployeeId])
+);
+
