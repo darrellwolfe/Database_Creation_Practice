@@ -56,7 +56,7 @@ Select *
 From Employee
 
 Update Employee
-Set Email = 'admin@darrellwolfe.com', PhoneNumber = '2089071617'
+Set Email = 'admin@darrellwolfe.com', PhoneNumber = '2089071617', DateofBirth = '01/01/1969'
 Where EmployeeId = 4
 
 
